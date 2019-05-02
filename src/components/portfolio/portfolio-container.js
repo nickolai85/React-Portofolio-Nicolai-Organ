@@ -4,20 +4,27 @@ import PortofolioItem from './portfolio-item';
 export default class PortofolioContainer extends Component {
   constructor(){
     super();
-    console.log("Portfolio Container has rendered");
+    this.state = {
+      pageTitle: "Welcome to my Portfolyo!",
+      date: [
+        {title: "Quip" },
+        {title: "Eventbrite" },
+        {title: "Ministry Safe" },
+        {title: "SwingAway" }
+    ]
+    }
   }
   portofolioItems(){
 
-    const data = ["Dina Cociug", "Vent System", "Verozone", "Amazone", "Leads trade"];
-    return data.map(item =>{
-      return <PortofolioItem title={item} url={"google.com"}/>;
+    return this.state.date.map(item =>{
+      return <PortofolioItem title={item.title} url={"google.com"}/>;
       //      return <h1>{item}</h1>;
     })
   }
     render() {
       return (
         <div>
-            <h2>Portofolio Items go here ...</h2>
+            <h2>{this.state.pageTitle}</h2>
             {this.portofolioItems()}
         </div>
       );
