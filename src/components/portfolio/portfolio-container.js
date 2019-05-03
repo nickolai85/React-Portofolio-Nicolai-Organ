@@ -6,6 +6,7 @@ export default class PortofolioContainer extends Component {
     super();
     this.state = {
       pageTitle: "Welcome to my Portfolyo!",
+      isLoading: false,
       data: [
         {title: "Dina Cociug", category:"HVAC"},
         {title: "VentSystem", category:"HVAC"},
@@ -33,6 +34,9 @@ export default class PortofolioContainer extends Component {
     })
   }
     render() {
+      if(this.state.isLoading){
+        return <div>Loading ...</div>
+      }
       return (
         <div>
             <h2>{this.state.pageTitle}</h2>
