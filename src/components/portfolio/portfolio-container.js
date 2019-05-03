@@ -12,7 +12,14 @@ export default class PortofolioContainer extends Component {
         {title: "Ministry Safe" },
         {title: "SwingAway" }
     ]
-    }
+    
+    };
+    this.handlePageTitleUpdate = this.handlePageTitleUpdate.bind(this);
+  }
+  handlePageTitleUpdate(){
+    this.setState({
+      pageTitle: "Something Else"
+    })
   }
   portofolioItems(){
 
@@ -26,6 +33,8 @@ export default class PortofolioContainer extends Component {
         <div>
             <h2>{this.state.pageTitle}</h2>
             {this.portofolioItems()}
+            <hr />
+            <button onClick = {this.handlePageTitleUpdate}>Change Title</button>
         </div>
       );
     }
