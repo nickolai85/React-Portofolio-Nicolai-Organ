@@ -8,11 +8,11 @@ export default class PortofolioContainer extends Component {
       pageTitle: "Welcome to my Portfolyo!",
       isLoading: false,
       data: [
-        {title: "Dina Cociug", category:"HVAC"},
-        {title: "VentSystem", category:"HVAC"},
-        {title: "Verozone Solution", category:"IT"},
-        {title: "Amazon", category:"eComerce"},
-        {title: "Leads Trade", category:"IT"}
+        {title: "Dina Cociug", category:"HVAC" , slug: "quip"},
+        {title: "VentSystem", category:"HVAC", slug: "eventbrite"},
+        {title: "Verozone Solution", category:"IT" , slug: "ministry-safe "},
+        {title: "Amazon", category:"eComerce" , slug: "swingway"},
+        {title: "Leads Trade", category:"IT" , slug: "lt"}
     ]
     
     };
@@ -22,8 +22,8 @@ export default class PortofolioContainer extends Component {
   portofolioItems(){
 
     return this.state.data.map(item =>{
-      return <PortofolioItem title={item.title} url={"google.com"}/>;
-      //      return <h1>{item}</h1>;
+      return <PortofolioItem title={item.title} url={"google.com"} slug={item.slug}/>;
+     
     })
   }
   handleFilter(filter){
