@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 import PortofolioItem from './portfolio-item';
 export default class PortofolioContainer extends Component {
@@ -8,21 +9,30 @@ export default class PortofolioContainer extends Component {
       pageTitle: "Welcome to my Portfolyo!",
       isLoading: false,
       data: [
-        {title: "Dina Cociug", category:"HVAC" , slug: "quip"},
-        {title: "VentSystem", category:"HVAC", slug: "eventbrite"},
-        {title: "Verozone Solution", category:"IT" , slug: "ministry-safe "},
-        {title: "Amazon", category:"eComerce" , slug: "swingway"},
-        {title: "Leads Trade", category:"IT" , slug: "lt"}
     ]
     
     };
-    this.handleFilter = this.handleFilter.bind(this);
-  }
 
+    this.getPortfolioItems = this.getPortfolioItems.bind(this);
+  }
+  getPortfolioItems(){
+    axios.get('https://nick.devcamp.space/portfolio/portfolio_items')
+    .then(response => {
+    
+      this.setState({
+        data : response.data.portfolio_items
+      });
+
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  }
   portofolioItems(){
 
     return this.state.data.map(item =>{
-      return <PortofolioItem title={item.title} url={"google.com"} slug={item.slug}/>;
+      return <PortofolioItem title={item.name} url={item.url} slug={item.id}/>;
      
     })
   }
@@ -33,10 +43,14 @@ export default class PortofolioContainer extends Component {
       } )
     })
   }
+  componentDidMount(){
+    this.getPortfolioItems();
+  }
     render() {
       if(this.state.isLoading){
         return <div>Loading ...</div>
       }
+      this.getPortfolioItems();
       return (
         <div>
             <h2>{this.state.pageTitle}</h2>
