@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 
 import {
   BrowserRouter as Router,
@@ -22,8 +21,6 @@ export default class App extends Component {
    
     return (
       <div className='app'>
-        <h1>Nicolai Organs Portfolio</h1>
-        <div><h4>{moment().format('MMMM Do YYYY, h:mm:ss a')}</h4></div>
         <Router>
           <div>
             <NavigationContainer />
