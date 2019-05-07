@@ -8,12 +8,11 @@ export default class PortofolioContainer extends Component {
     this.state = {
       pageTitle: "Welcome to my Portfolyo!",
       isLoading: false,
-      data: [
-    ]
+      data: []
     
     };
 
-    this.getPortfolioItems = this.getPortfolioItems.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
   getPortfolioItems(){
     axios.get('https://nick.devcamp.space/portfolio/portfolio_items')
@@ -30,17 +29,17 @@ export default class PortofolioContainer extends Component {
 
   }
   portofolioItems(){
-    // Data that we'll need:
-    // - background image: thumb_image_url
-    // - logo
-    // - description: description
-    // - id: id
     return this.state.data.map(item =>{
       return(
-         <PortofolioItem key={item.id} title={item.name} url={item.url} slug={item.id}/>
+         <PortofolioItem 
+            key={item.id}
+            item={item}
+         />
       );
     });
   }
+
+  
   handleFilter(filter){
     this.setState({
       data: this.state.data.filter(item =>{
@@ -55,14 +54,14 @@ export default class PortofolioContainer extends Component {
       if(this.state.isLoading){
         return <div>Loading ...</div>
       }
-      this.getPortfolioItems();
       return (
         <div>
             <h2>{this.state.pageTitle}</h2>
-            {this.portofolioItems()}
+            
             <button onClick = {() => this.handleFilter('HVAC')}>HVAC</button>
             <button onClick = {() => this.handleFilter('IT')}>IT</button>
             <button onClick = {() => this.handleFilter('eComerce')}>eComerce</button>
+            {this.portofolioItems()}
         </div>
       );
     }
