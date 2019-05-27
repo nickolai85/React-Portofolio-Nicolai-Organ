@@ -24,6 +24,14 @@ export default class PortfolioForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.componentConfig = this.componentConfig.bind(this);
         this.djsConfig = this.djsConfig.bind(this);
+        this.handleThumbDrop = this.handleThumbDrop.bind(this);
+
+      }
+
+      handleThumbDrop() {
+        return {
+          addedfile: file => this.setState({ thumb_image: file })
+        };
       }
       buildForm() {
         let formData = new FormData();
@@ -33,7 +41,9 @@ export default class PortfolioForm extends Component {
         formData.append("portfolio_item[url]", this.state.url);
         formData.append("portfolio_item[category]", this.state.category);
         formData.append("portfolio_item[position]", this.state.position);
-    
+        if (this.state.thumb_image) {
+          formData.append("portfolio_item[thumb_image]", this.state.thumb_image);
+        }
         return formData;
       }
 
@@ -132,6 +142,7 @@ export default class PortfolioForm extends Component {
             <DropzoneComponent
               config={this.componentConfig()}
               djsConfig={this.djsConfig()}
+              eventHandlers={this.handleThumbDrop()}
             />
           </div>
           <div>
