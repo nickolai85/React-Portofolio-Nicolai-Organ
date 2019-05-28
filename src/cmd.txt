@@ -2,3 +2,5 @@ Installing dropzone
 >>npm i react-dropzone-component
 Installing and Configuring Font Awesome in React
 >>npm i @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+Axios Documentation
+https://github.com/axios/axios
