@@ -4,3 +4,10 @@ Installing and Configuring Font Awesome in React
 >>npm i @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
 Axios Documentation
 https://github.com/axios/axios
+Deep Dive: innerHeight, scrollTop, and offsetHeight
+window.innerHeight Documentation
+https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight
+document.documentElement.scrollTop Documentation
+https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+document.documentElement.offsetHeight Documentation
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight
