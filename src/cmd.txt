@@ -11,3 +11,5 @@ document.documentElement.scrollTop Documentation
 https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
 document.documentElement.offsetHeight Documentation
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight
+Documentation for removeEventListener
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
