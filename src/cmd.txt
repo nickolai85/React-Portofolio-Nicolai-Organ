@@ -13,3 +13,5 @@ document.documentElement.offsetHeight Documentation
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight
 Documentation for removeEventListener
 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+Installing the React Modal Library
+>>npm i react-modal
