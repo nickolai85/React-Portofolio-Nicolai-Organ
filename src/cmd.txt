@@ -23,3 +23,8 @@ https://github.com/jordanhudgens/jordan-hudgens-react-portfolio/blob/master/src/
 >>npm i react-html-parser
 -generate Text 
 ex. in .html lorem*50 (emmet)
+-Installing Striptags and Truncate Component in React
+https://www.npmjs.com/package/striptags
+>>npm install striptags
+https://www.npmjs.com/package/react-truncate
+>>npm i react-truncate
