@@ -19,3 +19,7 @@ Installing Draft JS Dependencies for Rich Text Editing in React
 >>npm i draft-js react-draft-wysiwyg draftjs-to-html html-to-draftjs
 WYSIWYG Styles
 https://github.com/jordanhudgens/jordan-hudgens-react-portfolio/blob/master/src/style/react-draft-wysiwyg.scss
+-Installing React HTML Parser and Generating Sample Content
+>>npm i react-html-parser
+-generate Text 
+ex. in .html lorem*50 (emmet)
