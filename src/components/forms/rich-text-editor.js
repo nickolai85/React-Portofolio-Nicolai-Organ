@@ -23,7 +23,9 @@ export default class RichTextEditor extends Component {
       )
     );
   }
-
+  uploadFile(file) {
+    console.log("upload file", file);
+  }
   render() {
     return (
       <div>
@@ -33,6 +35,19 @@ export default class RichTextEditor extends Component {
           editorClassname="demo-editor"
           // This is passed to the editor as a prop, and it expects that, that's not something that we did or anything that we made up, the draft.js component itself is expecting this prop. Whenever someone starts typing in, this prop is going to be called. They're gonna run the function, they're gonna pass in the new editor state
           onEditorStateChange={this.onEditorStateChange}
+          toolbar={{
+            inline: { inDropdown: true },
+            list: { inDropdown: true },
+            textAlign: { inDropdown: true },
+            link: { inDropdown: true },
+            history: { inDropdown: true },
+            image: {
+              uploadCallback: this.uploadFile,
+              alt: { present: true, mandatory: false },
+              previewImage: true,
+              inputAccept: "image/gif,image/jpeg,image/jpg,image/png,image/svg"
+            }
+          }}
         />
       </div>
     );
