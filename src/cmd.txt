@@ -28,3 +28,5 @@ https://www.npmjs.com/package/striptags
 >>npm install striptags
 https://www.npmjs.com/package/react-truncate
 >>npm i react-truncate
+-Converting Image Files into Base64 Strings
+https://bottega.devcamp.com/22/guide/2489
