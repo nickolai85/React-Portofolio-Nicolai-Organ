@@ -16,13 +16,20 @@ export default class BlogDetail extends Component {
     };
 
     this.handleEditClick = this.handleEditClick.bind(this);
+    this.handleFeaturedImageDelete = this.handleFeaturedImageDelete.bind(this);
   }
 
   handleEditClick() {
     console.log("handle edit clicked");
     this.setState({ editMode: true });
   }
-
+  handleFeaturedImageDelete() {
+    this.setState({
+      blogItem: {
+        featured_image_url: ""
+      }
+    });
+  }
   getBlogItem() {
     axios
       .get(
@@ -53,7 +60,11 @@ export default class BlogDetail extends Component {
     const contentManager = () => {
       if (this.state.editMode) {
         return (
-          <BlogForm editMode={this.state.editMode} blog={this.state.blogItem} />
+          <BlogForm
+          handleFeaturedImageDelete={this.handleFeaturedImageDelete}
+          editMode={this.state.editMode}
+          blog={this.state.blogItem}
+        />
         );
       } else {
         return (
