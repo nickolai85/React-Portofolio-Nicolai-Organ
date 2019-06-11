@@ -28,6 +28,9 @@ export default class BlogDetail extends Component {
 
   handleEditClick() {
     console.log("handle edit clicked");
+    if(this.props.loggedInStatus === "LOGGED_IN"){
+      this.setState({editMode: true});
+    }
     this.setState({ editMode: true });
   }
   handleFeaturedImageDelete() {
@@ -65,7 +68,7 @@ export default class BlogDetail extends Component {
     } = this.state.blogItem;
 
     const contentManager = () => {
-      if (this.state.editMode) {
+      if (this.state.editMode && this.props.loggedInStatus ==="LOGGED_IN") {
         return (
           <BlogForm
           handleFeaturedImageDelete={this.handleFeaturedImageDelete}
