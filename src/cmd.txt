@@ -30,3 +30,8 @@ https://www.npmjs.com/package/react-truncate
 >>npm i react-truncate
 -Converting Image Files into Base64 Strings
 https://bottega.devcamp.com/22/guide/2489
+Heroku Deployment for React JS Applications
+-Cretate project
+>>heroku create nicolai-organ-react-portofolio
+-deploy project
+>>git push heroku master
